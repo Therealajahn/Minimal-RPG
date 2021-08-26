@@ -1,0 +1,67 @@
+body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  justify-items: center;
+}
+.backboard {
+  background-color: #4e4f4e;
+  width: 100vh;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 8fr 1fr 3fr;
+  grid-template-columns: 8fr 7fr;
+  grid-template-areas:
+    "canvas colors"
+    "tools ."
+    "timeline timeline";
+}
+
+.sprite-canvas-wrapper {
+  grid-area: canvas;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  margin-left: 1vw;
+}
+
+.sprite-canvas {
+  width: 60vh;
+  height: 60vh;
+  background-color: #fff;
+}
+
+.colors-wrapper {
+  grid-area: colors;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+.colors {
+  width: 30vh;
+  height: 30vh;
+  background-color: #fff;
+}
+
+.tools-wrapper {
+  grid-area: tools;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+}
+
+.timeline {
+  grid-area: timeline;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(8, 1fr);
+}
+.pen,
+.eraser,
+.thumbnail {
+  width: 10vh;
+  height: 10vh;
+  background-color: #fff;
+}
