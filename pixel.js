@@ -61,6 +61,9 @@ function mouseDownOverPixel(spritePixel) {
       spritePixel.style.backgroundColor = STORE.selectedColor;
     }
   });
+  spritePixel.addEventListener("click", (e) => {
+    spritePixel.style.backgroundColor = STORE.selectedColor;
+  });
 }
 
 //STORE
