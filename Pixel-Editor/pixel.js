@@ -1,3 +1,5 @@
+//POPULATE
+
 function populatePallete() {
   const palette = document.getElementsByClassName("palette")[0];
 
@@ -23,6 +25,8 @@ function populatePallete() {
   for (let i = 0; i < 16; i++) {
     const color = document.createElement("div");
     color.style.backgroundColor = colorArray[i];
+    color.setAttribute("class", colorArray[i]);
+    whenColorClicked(color);
     palette.appendChild(color);
   }
 }
@@ -30,11 +34,36 @@ function populatePallete() {
 populatePallete();
 
 function populateCanvas() {
+  let spriteCanvas = document.getElementsByClassName("sprite-canvas")[0];
   for (let x = 0; x < 8; x++) {
-    for (let y = 8; y < 8; y++) {
+    for (let y = 0; y < 8; y++) {
       const spritePixel = document.createElement("div");
+      spritePixel.setAttribute("class", `${x},${y}`);
+      mouseDownOverPixel(spritePixel);
+      spriteCanvas.appendChild(spritePixel);
     }
   }
 }
 
 populateCanvas();
+
+//DRAW
+
+function whenColorClicked(color) {
+  color.addEventListener("click", (e) => {
+    STORE.selectedColor = e.target.className;
+  });
+}
+
+function mouseDownOverPixel(spritePixel) {
+  spritePixel.addEventListener("mousedown", (e) => {
+    spritePixel.style.backgroundColor = STORE.selectedColor;
+  });
+}
+
+//STORE
+
+let STORE = {
+  selectedColor: "#fff1e8",
+  tool: "pen",
+};
