@@ -56,8 +56,10 @@ function whenColorClicked(color) {
 }
 
 function mouseDownOverPixel(spritePixel) {
-  spritePixel.addEventListener("mousedown", (e) => {
-    spritePixel.style.backgroundColor = STORE.selectedColor;
+  spritePixel.addEventListener("mouseover", (e) => {
+    if (e.buttons === 1) {
+      spritePixel.style.backgroundColor = STORE.selectedColor;
+    }
   });
 }
 
