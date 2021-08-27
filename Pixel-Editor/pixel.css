@@ -13,7 +13,7 @@ body {
   grid-template-rows: 8fr 1fr 3fr;
   grid-template-columns: 8fr 7fr;
   grid-template-areas:
-    "canvas colors"
+    "canvas palette"
     "tools ."
     "timeline timeline";
 }
@@ -23,25 +23,49 @@ body {
   display: grid;
   align-items: center;
   justify-items: center;
-  margin-left: 1vw;
+  margin-left: 1.5vw;
 }
 
 .sprite-canvas {
   width: 60vh;
   height: 60vh;
-  background-color: #fff;
+  background-color: #000;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
 }
 
-.colors-wrapper {
-  grid-area: colors;
+/* #000000 (0, 0, 0) black */
+/* #1d2b53 (29, 43, 83) dark-blue */
+/* #7e2553 (126, 37, 83) dark-purple */
+/* #008751 (0, 135, 81) dark-green */
+/* #ab5236 (171, 82, 54) brown */
+/* #5f574f (95, 87, 79) dark-gray */
+/* #c2c3c7 (194, 195, 199) light-gray */
+/* #fff1e8 (255, 241, 232) white */
+/* #ff004d (255, 0, 77) red */
+/* #ffa300 (255, 163, 0) orange */
+/* #ffec27 (255, 236, 39) yellow */
+/* #00e436 (0, 228, 54) green */
+/* #29adff (41, 173, 255) blue */
+/* #83769c (131, 118, 156) indigo */
+/* #ff77a8 (255, 119, 168) pink */
+/* #ffccaa (255, 204, 170) peach */
+
+.palette-wrapper {
+  grid-area: palette;
   display: grid;
   align-items: center;
   justify-items: center;
 }
-.colors {
+
+.palette {
   width: 30vh;
   height: 30vh;
-  background-color: #fff;
+  background-color: #000;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
 }
 
 .tools-wrapper {
@@ -63,5 +87,5 @@ body {
 .thumbnail {
   width: 10vh;
   height: 10vh;
-  background-color: #fff;
+  background-color: #000;
 }
